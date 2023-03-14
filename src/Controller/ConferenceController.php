@@ -9,15 +9,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ConferenceController extends AbstractController
 {
-    /**
-     * @Route("/hello/{name}", name="homepage")
-     */
-    public function index(string $name = ''): Response
+    #[Route('/', name: 'app_conference')]
+    public function index(Request $request): Response
     {
         $greet = '';
-        if ($name) {
-            $greet = sprintf('<h1>Hello %s!<h1>', htmlspecialchars($name));
+        if ($name = $request->query->get('hello')) {
+            $greet = sprintf('<h1>Hello %s!</h1>', htmlspecialchars($name));
         }
+
+        //Començo pagina 64
+        //fer repo de git i guardar-lo i anar fent commits
         return new Response(<<<EOF
             <html>
                 <body>
@@ -25,7 +26,6 @@ class ConferenceController extends AbstractController
                     <img src="/images/under-construction.gif" />
                 </body>
             </html>
-            EOF
-        );
+            EOF);
     }
 }
