@@ -8,4 +8,15 @@ services:
       - .:/var/www/app/
     ports:
       - 8000:8000
+    depends_on:
+      - database
+
+  database:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: main
+      POSTGRES_PASSWORD: main
+      POSTGRES_DB: main
+    ports:
+      - 5432:5432
 
