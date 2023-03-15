@@ -8,6 +8,8 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/annotations": "1.13.*",
+        "doctrine/doctrine-bundle": "^2.7",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2",
         "sensio/framework-extra-bundle": "^6.2",
         "symfony/console": "5.2.*",

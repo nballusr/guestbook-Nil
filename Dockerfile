@@ -35,7 +35,7 @@ RUN docker-php-ext-install \
     zip
 
 # Install composer
-COPY --from=composer/composer:1-bin /composer /usr/bin/composer
+COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
 # Install Symfony CLI
 RUN wget https://get.symfony.com/cli/installer -O - | bash && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
